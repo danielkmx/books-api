@@ -13,7 +13,7 @@ router.get('/', (req,res,next) => {
 
             docs.map(doc => { return {...doc._doc, request: { 
                 type: 'GET',
-                url: 'http://localhost:3000/books/' + doc._id
+                url: 'https://quiet-beyond-95506.herokuapp.com/books/' + doc._id
             }}})
             res.status(200).json({
                 count: docs.length,
@@ -106,7 +106,7 @@ router.patch('/:bookId', (req,res,next) => {
             message: 'Book updated',
             request: {
                 type: 'GET',
-                url: 'http:localhost:3000/book/' + id
+                url: 'https://quiet-beyond-95506.herokuapp.com/book/' + id
             }
         });
     })
